@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Angela Forystek for Union Township Trustee, Porter County Indiana 2026. Rooted in Wheeler. Fighting for all of us.">
+<title>Angela Forystek — Union Township Trustee 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1f3c;
+    --green: #2d6a4f;
+    --green-bright: #40916c;
+    --green-light: #74c69d;
+    --orange: #e07b39;
+    --cream: #f5f0e6;
+    --cream-dark: #ede8d8;
+    --white: #fafaf8;
+    --muted: #6b7a8d;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--cream);
+    color: var(--navy);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(245,240,230,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--orange);
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 58px;
+  }
+
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--green); }
+
+  .nav-cta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--navy);
+    color: var(--cream);
+    padding: 0.5rem 1.1rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--green); }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--navy);
+  }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 2rem 4rem;
+    text-align: center;
+    position: relative;
+    background: var(--cream);
+  }
+
+  .hero-top-rule {
+    position: absolute;
+    top: 120px;
+    left: 10%; right: 10%;
+    height: 2px;
+    background: var(--orange);
+    opacity: 0.7;
+  }
+
+  .hero-bottom-rule {
+    position: absolute;
+    bottom: 140px;
+    left: 10%; right: 10%;
+    height: 2px;
+    background: var(--orange);
+    opacity: 0.7;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    line-height: 0.9;
+    color: var(--navy);
+    letter-spacing: 0.03em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-star-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-star-line {
+    flex: 1;
+    max-width: 180px;
+    height: 1px;
+    background: var(--green-bright);
+  }
+
+  .hero-stars {
+    color: var(--green-bright);
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+  }
+
+  .hero-office {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--navy);
+    opacity: 0.65;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--navy);
+    color: var(--cream);
+    padding: 0.85rem 2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--green); }
+
+  .btn-secondary {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1.5px solid var(--navy);
+    color: var(--navy);
+    padding: 0.85rem 2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover { background: var(--navy); color: var(--cream); }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+
+  .section-inner { max-width: 860px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .section-rule {
+    width: 100%;
+    height: 1px;
+    background: rgba(13,31,60,0.08);
+    margin-bottom: 2.5rem;
+  }
+
+  .section-rule-orange {
+    width: 36px;
+    height: 3px;
+    background: var(--orange);
+    border-radius: 2px;
+    margin-bottom: 2rem;
+  }
+
+  /* ABOUT */
+  #about {
+    background: var(--cream);
+    border-top: 1px solid rgba(13,31,60,0.06);
+  }
+
+  .about-body {
+    font-size: 1rem;
+    color: var(--navy);
+    line-height: 1.85;
+    max-width: 640px;
+    opacity: 0.82;
+  }
+
+  .about-body p + p { margin-top: 1.2rem; }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(13,31,60,0.07);
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* PLATFORM */
+  #platform {
+    background: var(--navy);
+    color: var(--cream);
+  }
+
+  #platform .section-title { color: var(--cream); }
+  #platform .section-label { color: var(--green-light); }
+
+  .platform-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .platform-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 1.75rem;
+    border-top: 3px solid transparent;
+    transition: background 0.2s;
+  }
+
+  .platform-card:hover { background: rgba(255,255,255,0.07); }
+  .platform-card:nth-child(1) { border-top-color: var(--green-bright); }
+  .platform-card:nth-child(2) { border-top-color: var(--orange); }
+  .platform-card:nth-child(3) { border-top-color: var(--orange); }
+  .platform-card:nth-child(4) { border-top-color: var(--green-bright); }
+
+  .card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .card-body {
+    font-size: 0.9rem;
+    color: rgba(245,240,230,0.85);
+    line-height: 1.75;
+  }
+
+  /* TRUSTEE */
+  #trustee {
+    background: var(--cream-dark);
+    border-top: 1px solid rgba(13,31,60,0.06);
+  }
+
+  .trustee-body {
+    font-size: 1rem;
+    color: var(--navy);
+    line-height: 1.85;
+    max-width: 640px;
+    opacity: 0.82;
+  }
+
+  .trustee-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    max-width: 640px;
+  }
+
+  .trustee-list li {
+    font-size: 0.95rem;
+    color: var(--navy);
+    padding-left: 1.5rem;
+    position: relative;
+    opacity: 0.82;
+    line-height: 1.65;
+  }
+
+  .trustee-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 5px;
+    background: var(--orange);
+    border-radius: 50%;
+  }
+
+  /* INVOLVE */
+  #involve {
+    background: var(--cream);
+    border-top: 1px solid rgba(13,31,60,0.06);
+  }
+
+  .involve-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .involve-card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(13,31,60,0.07), 0 4px 16px rgba(13,31,60,0.04);
+    padding: 2rem 1.5rem;
+    border-top: 3px solid var(--navy);
+    transition: box-shadow 0.2s;
+  }
+
+  .involve-card:hover {
+    box-shadow: 0 2px 8px rgba(13,31,60,0.1), 0 8px 24px rgba(13,31,60,0.07);
+  }
+
+  .involve-num {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .involve-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .involve-body {
+    font-size: 0.88rem;
+    color: #566070;
+    line-height: 1.65;
+  }
+
+  /* Focus styles for keyboard navigation — WCAG 2.1 AA */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* CONTACT */
+  #contact {
+    background: var(--navy);
+    color: var(--cream);
+  }
+
+  #contact .section-title { color: var(--cream); }
+  #contact .section-label { color: var(--green-light); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+    align-items: start;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    color: var(--cream);
+    line-height: 1.8;
+    opacity: 0.75;
+    margin-bottom: 2rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--green-light);
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover { color: var(--orange); }
+
+  .contact-dot {
+    width: 5px;
+    height: 5px;
+    background: var(--orange);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .donate-box {
+    background: rgba(245,240,230,0.05);
+    border: 1px solid rgba(245,240,230,0.1);
+    border-radius: 8px;
+    border-top: 3px solid var(--orange);
+    padding: 2rem;
+  }
+
+  .donate-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+  }
+
+  .donate-body {
+    font-size: 0.9rem;
+    color: rgba(245,240,230,0.82);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--cream-dark);
+    border-top: 2px solid var(--orange);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.03em;
+  }
+
+  .footer-star-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin: 0.75rem auto;
+    max-width: 300px;
+  }
+
+  .footer-star-line {
+    flex: 1;
+    height: 1px;
+    background: var(--green-bright);
+    opacity: 0.4;
+  }
+
+  .footer-stars {
+    color: var(--green-bright);
+    font-size: 0.5rem;
+    letter-spacing: 0.4em;
+  }
+
+  .footer-office {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--navy);
+    opacity: 0.55;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-disc {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 58px; left: 0; right: 0;
+      background: var(--cream);
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid rgba(13,31,60,0.08);
+      gap: 1.25rem;
+    }
+    .nav-toggle { display: flex; }
+    .nav-cta { display: none; }
+    .platform-grid { grid-template-columns: 1fr; }
+    .involve-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    .hero-top-rule { top: 90px; }
+    .hero-bottom-rule { bottom: 100px; }
+  }
+
+  @media (max-width: 480px) {
+    .about-stats { grid-template-columns: 1fr; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-name">Forystek</a>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#platform">Platform</a></li>
+    <li><a href="#trustee">The Office</a></li>
+    <li><a href="resources.html">Township 101</a></li>
+    <li><a href="#involve">Get Involved</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Vote November 2026</a>
+  <button class="nav-toggle" id="navtoggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section id="hero">
+  <div class="hero-top-rule"></div>
+  <div class="hero-inner">
+    <h1 class="hero-name">FORYSTEK</h1>
+    <div class="hero-star-row">
+      <div class="hero-star-line"></div>
+      <span class="hero-stars">★ ★ ★</span>
+      <div class="hero-star-line"></div>
+    </div>
+    <p class="hero-office">Union Township Trustee</p>
+    <p class="hero-sub">Porter County, Indiana &nbsp;·&nbsp; 2026</p>
+    <p class="hero-tagline">Rooted in Wheeler. Fighting for all of us.</p>
+    <div class="hero-actions">
+      <a href="#about" class="btn-primary">Meet Angela</a>
+      <a href="#involve" class="btn-secondary">Get Involved</a>
+    </div>
+  </div>
+  <div class="hero-bottom-rule"></div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label reveal">About</p>
+    <h2 class="section-title reveal">A Neighbor Who<br>Knows This Place</h2>
+    <div class="section-rule reveal"></div>
+    <div class="about-body reveal">
+      <p>Union Township is a small, tight-knit community where people know each other, have history with each other, and do not always have the same access to the same resources or information. A trustee who pretends those differences do not exist is not serving everyone. Just the ones who already have access.</p>
+      <p>I have lived here for thirty years. I am a wife, a mother of three, and a real estate professional who spent six years watching housing affordability climb past what working families in this community can reach. I went back to school for a Master of Public Administration because I wanted to understand how systems actually work and where change is genuinely possible.</p>
+      <p>I am running because this office does real things for real people. It determines whether a neighbor in crisis gets help or gets turned away. It stewards the cemeteries where our community's history is buried. It manages public money on behalf of every taxpayer in this township regardless of how they vote.</p>
+      <p>I am not running on what I have accomplished. I am running on what I intend to do and who I will show up for when I get there.</p>
+    </div>
+    <div class="about-stats reveal">
+      <div>
+        <div class="stat-num">30</div>
+        <div class="stat-label">Years rooted in<br>Union Township</div>
+      </div>
+      <div>
+        <div class="stat-num">MPA</div>
+        <div class="stat-label">Master of Public<br>Administration</div>
+      </div>
+      <div>
+        <div class="stat-num">6</div>
+        <div class="stat-label">Years in real estate<br>serving local families</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="platform">
+  <div class="section-inner">
+    <p class="section-label reveal">Platform</p>
+    <h2 class="section-title reveal">What I Am Here to Do</h2>
+    <div class="section-rule-orange reveal"></div>
+    <div class="platform-grid reveal">
+      <div class="platform-card">
+        <p class="card-title">Housing and Community Access</p>
+        <p class="card-body">Township assistance exists to help residents through housing instability, utility shutoffs, medical hardship, and other crises. Too many people do not know they can ask for it. I will make sure they do, and I will make sure the process is approachable for everyone who qualifies.</p>
+      </div>
+      <div class="platform-card">
+        <p class="card-title">Environmental Responsibility</p>
+        <p class="card-body">The green spaces, wetlands, and natural areas in this region belong to the people who live here. Responsible land stewardship means planning for the long term, not just the next approval cycle or the next outside investment interest.</p>
+      </div>
+      <div class="platform-card">
+        <p class="card-title">Open and Honest Government</p>
+        <p class="card-body">The trustee office manages public money on behalf of every resident regardless of how they vote. That means clear communication, records that are actually accessible, and a door that is genuinely open rather than just open in name.</p>
+      </div>
+      <div class="platform-card">
+        <p class="card-title">Civic Knowledge and Connection</p>
+        <p class="card-body">People make better decisions when they understand the systems that affect them. Part of this job is helping residents know what resources they have, what their rights are, and how local government actually works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trustee">
+  <div class="section-inner">
+    <p class="section-label reveal">The Office</p>
+    <h2 class="section-title reveal">What the Trustee<br>Is Responsible For</h2>
+    <div class="section-rule reveal"></div>
+    <p class="trustee-body reveal">Most residents have never had a reason to know what this office does. That is worth changing. The Township Trustee is the closest point of government to where people actually live, and the responsibilities are more concrete and more consequential than most people realize.</p>
+    <ul class="trustee-list reveal">
+      <li><strong>Township Assistance</strong> — Emergency financial help for residents in genuine need. Shelter, utilities, food, medical expenses, and burial costs. If you or someone you know needs help, this program exists and you have a right to ask for it.</li>
+      <li><strong>Cemetery Stewardship</strong> — The trustee is responsible for maintaining township cemeteries, including abandoned and neglected burial grounds. This is an act of respect for the community's history and the people who came before us.</li>
+      <li><strong>Fire Protection Oversight</strong> — Ensuring fire protection services are in place and the township is covered.</li>
+      <li><strong>Township Property</strong> — Managing and maintaining township owned land and facilities on behalf of every resident.</li>
+      <li><strong>Budget Administration</strong> — Stewarding public funds carefully and accounting to every taxpayer in the township regardless of politics.</li>
+      <li><strong>Community Navigation</strong> — Being someone residents can actually reach when they need help understanding their options, finding resources, or figuring out which door to knock on first.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="involve">
+  <div class="section-inner">
+    <p class="section-label reveal">Get Involved</p>
+    <h2 class="section-title reveal">Local Races Are Won<br>by Neighbors</h2>
+    <div class="section-rule reveal"></div>
+    <p class="reveal" style="font-size:1rem;color:var(--navy);opacity:0.75;max-width:580px;line-height:1.8;margin-bottom:2rem;">This is a township race. It will be decided by a small number of people who paid attention and showed up.</p>
+    <div class="involve-grid">
+      <div class="involve-card reveal">
+        <div class="involve-num">01</div>
+        <p class="involve-title">Spread the Word</p>
+        <p class="involve-body">Tell one neighbor who has not heard this name. Share this page. Talk about what the trustee office does and why the person holding it matters.</p>
+      </div>
+      <div class="involve-card reveal">
+        <div class="involve-num">02</div>
+        <p class="involve-title">Vote in November</p>
+        <p class="involve-body">Township races turn on turnout. A few hundred votes can decide this. If you live in Union Township, your vote here carries more weight than you have probably been told.</p>
+      </div>
+      <div class="involve-card reveal">
+        <div class="involve-num">03</div>
+        <p class="involve-title">Get in Touch</p>
+        <p class="involve-body">If you want to volunteer, share your expertise, or just have a conversation about what this community needs, reach out. There is no form. Just a real email address below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label reveal">Contact</p>
+    <h2 class="section-title reveal">Reach Out Directly</h2>
+    <div class="section-rule-orange reveal"></div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <p>No staff. No form with fifteen fields. Just a neighbor who is running for office and wants to hear from you.</p>
+        <a href="mailto:forystekforuniontownship@gmail.com" class="contact-link">
+          <span class="contact-dot"></span>
+          forystekforuniontownship@gmail.com
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61575376803942" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-dot"></span>
+          Facebook · Forystek for Union Township Trustee
+        </a>
+      </div>
+      <div class="donate-box reveal">
+        <p class="donate-title">Support This Campaign</p>
+        <p class="donate-body">This campaign runs on a small budget and a real community. Every dollar goes toward reaching Union Township voters. Signs, outreach, and the basics of an honest local race.</p>
+        <p style="font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;color:rgba(245,240,230,0.65);">Donation link coming soon. Email directly in the meantime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-name">FORYSTEK</p>
+  <div class="footer-star-row">
+    <div class="footer-star-line"></div>
+    <span class="footer-stars">★ ★ ★</span>
+    <div class="footer-star-line"></div>
+  </div>
+  <p class="footer-office">Union Township Trustee</p>
+  <p class="footer-tagline">Rooted in Wheeler. Fighting for all of us.</p>
+  <p class="footer-disc">
+    Paid for by Forystek For Union Township Trustee Committee<br>
+    Union Township · Porter County · Indiana · 2026 · Democratic Candidate
+  </p>
+</footer>
+
+<script>
+  document.getElementById('navtoggle').addEventListener('click', function() {
+    document.getElementById('navlinks').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navlinks').classList.remove('open');
+    });
+  });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>

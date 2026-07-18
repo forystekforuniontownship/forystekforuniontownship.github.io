@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Township 101 — Plain language guides to local government, public budgets, and civic resources for Union Township residents.">
+<title>Township 101 — Angela Forystek for Union Township Trustee</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1f3c;
+    --green: #2d6a4f;
+    --green-bright: #40916c;
+    --green-light: #74c69d;
+    --orange: #e07b39;
+    --cream: #f5f0e6;
+    --cream-dark: #ede8d8;
+    --white: #fafaf8;
+    --muted: #6b7a8d;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--navy);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(245,240,230,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--orange);
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 58px;
+  }
+
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--navy);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-back {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--green); }
+
+  /* HERO */
+  .page-hero {
+    padding: 100px 2rem 4rem;
+    background: var(--navy);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero-rule {
+    width: 60px;
+    height: 3px;
+    background: var(--orange);
+    margin: 0 auto 1.5rem;
+  }
+
+  .page-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 1rem;
+  }
+
+  .page-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .page-sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    color: var(--cream);
+    opacity: 0.75;
+    max-width: 560px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  /* MAIN */
+  .main { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-rule {
+    width: 100%;
+    height: 1px;
+    background: rgba(13,31,60,0.1);
+    margin-bottom: 2rem;
+  }
+
+  .section-rule-orange {
+    width: 40px;
+    height: 3px;
+    background: var(--orange);
+    margin-bottom: 1.5rem;
+  }
+
+  .body-text {
+    font-size: 1rem;
+    color: var(--navy);
+    line-height: 1.8;
+    opacity: 0.85;
+    max-width: 660px;
+  }
+
+  .body-text p + p { margin-top: 1.1rem; }
+
+  /* LESSON CARD */
+  .lesson {
+    background: var(--white);
+    border: 1px solid rgba(13,31,60,0.08);
+    border-left: 4px solid var(--green-bright);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lesson-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.4rem;
+  }
+
+  .lesson-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+
+  .lesson-body {
+    font-size: 0.95rem;
+    color: var(--navy);
+    line-height: 1.75;
+    opacity: 0.85;
+  }
+
+  .lesson-body p + p { margin-top: 1rem; }
+
+  /* STEP LIST */
+  .steps {
+    list-style: none;
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .steps li {
+    font-size: 0.95rem;
+    color: var(--navy);
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+
+  .steps li .step-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: var(--orange);
+    background: rgba(224,123,57,0.1);
+    width: 1.3rem;
+    height: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-top: 0.1rem;
+  }
+
+  /* LINK CARDS */
+  .link-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .link-card {
+    background: var(--white);
+    border: 1px solid rgba(13,31,60,0.08);
+    border-top: 3px solid var(--navy);
+    padding: 1.5rem;
+    text-decoration: none;
+    display: block;
+    transition: border-top-color 0.2s;
+  }
+
+  .link-card:hover { border-top-color: var(--orange); }
+
+  .link-card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.4rem;
+  }
+
+  .link-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .link-card-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .link-card-url {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.12em;
+    color: var(--orange);
+    margin-top: 0.75rem;
+    display: block;
+    word-break: break-all;
+  }
+
+  /* CALLOUT BOX */
+  .callout {
+    background: rgba(13,31,60,0.04);
+    border-left: 4px solid var(--orange);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .callout p {
+    font-size: 0.9rem;
+    color: var(--navy);
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  .callout strong { color: var(--navy); font-weight: 500; opacity: 1; }
+
+  /* GLOSSARY */
+  .glossary {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .glossary-item {
+    padding: 0.85rem 1rem;
+    background: var(--white);
+    border: 1px solid rgba(13,31,60,0.06);
+    border-left: 3px solid var(--green-bright);
+  }
+
+  .glossary-term {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+  }
+
+  .glossary-def {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* SECTION SPACER */
+  .section-block { margin-bottom: 4rem; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    border-top: 2px solid var(--orange);
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-disc {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.48rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .link-grid { grid-template-columns: 1fr; }
+    .main { padding: 3rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">Forystek</a>
+  <a href="index.html" class="nav-back">← Back to Main Site</a>
+</nav>
+
+
+<div class="page-hero">
+  <p class="page-eyebrow">Civic Education · Union Township</p>
+  <div class="page-hero-rule"></div>
+  <h1 class="page-title">Township 101</h1>
+  <p class="page-sub">Plain language guides to local government, public budgets, and the civic tools that already belong to you. No jargon. No assumptions. Just the actual information.</p>
+</div>
+
+
+<div class="main">
+
+  <!-- INTRO -->
+  <div class="section-block">
+    <p class="section-label">Why This Page Exists</p>
+    <h2 class="section-title">Your government keeps records.<br>Most people don't know where to find them.</h2>
+    <div class="section-rule"></div>
+    <div class="body-text">
+      <p>Every dollar your township government spends is a public record. Every budget is filed with the state. Every audit is available online. The cemetery maintenance decisions, the assistance fund balance, the property management costs — all of it is there.</p>
+      <p>Most residents have never seen any of it. Not because they don't care, but because nobody told them it existed or explained how to read it when they found it.</p>
+      <p>This page is an attempt to change that. It will grow over time. Check back as we add more guides, more documents, and more plain language explanations of how your local government actually works.</p>
+    </div>
+  </div>
+
+
+  <!-- LESSON 1 -->
+  <div class="section-block">
+    <p class="section-label">Lesson 01</p>
+    <h2 class="section-title">You Already Have Power.<br>Here Is What It Looks Like.</h2>
+    <div class="section-rule-orange"></div>
+
+    <div class="lesson">
+      <p class="lesson-num">Lesson 01 of 10 · Civic Literacy Series</p>
+      <p class="lesson-title">What Civic Power Actually Means</p>
+      <div class="lesson-body">
+        <p>Civic power is not something a politician gives you. It is not something you earn by knowing the right people or having the right education. It is something you already have because you live here, pay taxes here, and have a legal stake in every decision made in your name by people you may have never heard of in rooms you may not know exist.</p>
+        <p>The reason it does not feel that way is not because the power is missing. It is because the tools for using it are buried under language and process that was never designed to be easy to find.</p>
+        <p>Here is what civic power looks like at the township level in plain terms.</p>
+      </div>
+      <ul class="steps" style="margin-top:1.25rem;">
+        <li><span class="step-num">1</span>You have the right to attend every Township Board meeting. They are public. No invitation required.</li>
+        <li><span class="step-num">2</span>You have the right to speak at public meetings during comment periods. Three minutes is typically the limit but your voice is on the record.</li>
+        <li><span class="step-num">3</span>You have the right to request any public document including the township budget, the assistance fund records, and meeting minutes. This is not a favor. It is the law.</li>
+        <li><span class="step-num">4</span>You have the right to apply for township assistance if you are in financial crisis. The program exists for exactly this and you do not have to be destitute to qualify.</li>
+        <li><span class="step-num">5</span>You have the right to vote for or run for the trustee office. The filing deadline, the process, and the requirements are all public information.</li>
+      </ul>
+      <div class="callout" style="margin-top:1.25rem;">
+        <p><strong>The bottom line:</strong> The systems that govern your daily life were built with public input mechanisms. Most people never use them because nobody explained they existed. Now you know.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- LESSON 2 — BUDGET -->
+  <div class="section-block">
+    <p class="section-label">Lesson 02</p>
+    <h2 class="section-title">How to Read a Township Budget<br>Without a Finance Degree</h2>
+    <div class="section-rule-orange"></div>
+
+    <div class="lesson">
+      <p class="lesson-num">Lesson 02 of 10 · Civic Literacy Series</p>
+      <p class="lesson-title">Finding and Understanding the Union Township Budget</p>
+      <div class="lesson-body">
+        <p>Every Indiana township is required by law to submit an annual budget to the Indiana Department of Local Government Finance. That budget is a public record and it is available to anyone online at no cost. Here is exactly how to find it and what you are looking at when you do.</p>
+      </div>
+
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--navy);margin:1.25rem 0 0.75rem;">Step by Step: Finding the Budget</p>
+      <ul class="steps">
+        <li><span class="step-num">1</span>Go to <strong>gateway.ifionline.org</strong> — this is Indiana's official public financial data portal.</li>
+        <li><span class="step-num">2</span>Click on <strong>Report Builder</strong> in the navigation menu.</li>
+        <li><span class="step-num">3</span>Under Report Type select <strong>Budget</strong>.</li>
+        <li><span class="step-num">4</span>Under County select <strong>Porter</strong>.</li>
+        <li><span class="step-num">5</span>Under Unit select <strong>Union Township</strong>.</li>
+        <li><span class="step-num">6</span>Select the year you want to review and click <strong>View Report</strong>.</li>
+        <li><span class="step-num">7</span>You now have the actual adopted budget for Union Township. Print it, save it, read it.</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>Direct link:</strong> gateway.ifionline.org/report_builder — bookmark this. It works for every local government in Indiana, not just Union Township. You can look up any county, city, school district, or township budget the same way.</p>
+      </div>
+
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--navy);margin:1.5rem 0 0.75rem;">What You Are Looking At</p>
+      <div class="glossary">
+        <div class="glossary-item">
+          <p class="glossary-term">General Fund</p>
+          <p class="glossary-def">The main operating budget. This covers the day to day costs of running the township office including salaries, supplies, and administrative expenses.</p>
+        </div>
+        <div class="glossary-item">
+          <p class="glossary-term">Township Assistance Fund</p>
+          <p class="glossary-def">This is the emergency assistance budget — the money available to help residents with housing, utilities, food, and medical costs in a crisis. The size of this fund matters directly to your neighbors who need it.</p>
+        </div>
+        <div class="glossary-item">
+          <p class="glossary-term">Fire Protection Fund</p>
+          <p class="glossary-def">Funds the township's fire protection contract or services. This is how fire coverage is paid for in areas without a municipal fire department.</p>
+        </div>
+        <div class="glossary-item">
+          <p class="glossary-term">Cemetery Fund</p>
+          <p class="glossary-def">Funds maintenance of township cemeteries including abandoned burial grounds the trustee is legally responsible for preserving.</p>
+        </div>
+        <div class="glossary-item">
+          <p class="glossary-term">Levy</p>
+          <p class="glossary-def">The total amount of property tax the township is authorized to collect. This is set through the state budget process and limits how much the township can spend.</p>
+        </div>
+        <div class="glossary-item">
+          <p class="glossary-term">Appropriation</p>
+          <p class="glossary-def">The amount formally approved to be spent from a fund. Just because money is appropriated does not mean it all gets spent — but it cannot be spent without the appropriation.</p>
+        </div>
+        <div class="glossary-item">
+          <p class="glossary-term">Encumbrance</p>
+          <p class="glossary-def">Money that has been committed to a purchase or contract but not yet paid out. It shows up as reserved in the budget.</p>
+        </div>
+        <div class="glossary-item">
+          <p class="glossary-term">Cash Balance</p>
+          <p class="glossary-def">What is actually in the fund at a given point in time. A healthy township keeps a reasonable cash balance so it can respond to needs without waiting for the next tax distribution.</p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:1.25rem;">
+        <p><strong>What to look for:</strong> Compare the Township Assistance Fund appropriation to what was actually spent. A large gap between those two numbers tells you something about whether residents who qualify are actually being connected to help. That is a question worth asking your trustee.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PAST BUDGETS AND AUDITS -->
+  <div class="section-block">
+    <p class="section-label">Public Documents</p>
+    <h2 class="section-title">Union Township Public Records<br>and Where to Find Them</h2>
+    <div class="section-rule"></div>
+    <div class="body-text" style="margin-bottom:1.5rem;">
+      <p>These are the real documents. All of them are public. All of them are free to access. You do not need to file a request or hire anyone to get them. You just need to know where to look.</p>
+    </div>
+    <div class="link-grid">
+      <a href="https://gateway.ifionline.org/report_builder/Default2.aspx?rptType=budget" target="_blank" rel="noopener" class="link-card">
+        <p class="link-card-label">Indiana Gateway</p>
+        <p class="link-card-title">Township Budget Reports</p>
+        <p class="link-card-desc">Annual adopted budgets for Union Township going back multiple years. Select Porter County then Union Township in the Report Builder.</p>
+        <span class="link-card-url">gateway.ifionline.org</span>
+      </a>
+      <a href="https://gateway.ifionline.org/report_builder/Default2.aspx?rptType=afr" target="_blank" rel="noopener" class="link-card">
+        <p class="link-card-label">Indiana Gateway</p>
+        <p class="link-card-title">Annual Financial Reports</p>
+        <p class="link-card-desc">Actual revenues and expenditures reported each year. Shows what was spent versus what was budgeted — often more revealing than the budget itself.</p>
+        <span class="link-card-url">gateway.ifionline.org</span>
+      </a>
+      <a href="https://www.in.gov/sboa/audit-reports/" target="_blank" rel="noopener" class="link-card">
+        <p class="link-card-label">Indiana State Board of Accounts</p>
+        <p class="link-card-title">Township Audit Reports</p>
+        <p class="link-card-desc">Independent audits of township finances conducted by the state. Search for Union Township Porter County. The most recent audit covering 2019 to 2022 found no reportable instances of noncompliance.</p>
+        <span class="link-card-url">in.gov/sboa/audit-reports</span>
+      </a>
+      <a href="https://budgetnotices.in.gov" target="_blank" rel="noopener" class="link-card">
+        <p class="link-card-label">Indiana DLGF</p>
+        <p class="link-card-title">Budget Notices and Hearings</p>
+        <p class="link-card-desc">Public hearing dates and adopted budget notices for local government units. This is where you find out when budget hearings are scheduled so you can attend and comment.</p>
+        <span class="link-card-url">budgetnotices.in.gov</span>
+      </a>
+      <a href="https://www.portercountyin.gov/776/Budget-Finance" target="_blank" rel="noopener" class="link-card">
+        <p class="link-card-label">Porter County</p>
+        <p class="link-card-title">County Budget and Finance</p>
+        <p class="link-card-desc">Porter County's official budget and finance page with links to county level financial documents and settlement reports showing how tax distributions flow to townships.</p>
+        <span class="link-card-url">portercountyin.gov</span>
+      </a>
+      <a href="https://gateway.ifionline.org" target="_blank" rel="noopener" class="link-card">
+        <p class="link-card-label">Indiana Gateway</p>
+        <p class="link-card-title">Full Financial Portal</p>
+        <p class="link-card-desc">The main Indiana Gateway portal. From here you can access budget data, annual financial reports, debt disclosures, and capital asset information for every local government unit in Indiana.</p>
+        <span class="link-card-url">gateway.ifionline.org</span>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- WHAT COMES NEXT -->
+  <div class="section-block">
+    <p class="section-label">Coming Soon</p>
+    <h2 class="section-title">More Lessons on the Way</h2>
+    <div class="section-rule"></div>
+    <div class="body-text">
+      <p>This series is being built lesson by lesson. Here is what is coming.</p>
+    </div>
+    <div class="glossary" style="margin-top:1.25rem;">
+      <div class="glossary-item">
+        <p class="glossary-term">Lesson 03 — How to Access Township Assistance</p>
+        <p class="glossary-def">Who qualifies, how to apply, what to bring, and what to do if you are denied. Plain language with no shame attached.</p>
+      </div>
+      <div class="glossary-item">
+        <p class="glossary-term">Lesson 04 — How Local Government Actually Works</p>
+        <p class="glossary-def">The difference between the trustee, the township board, the county commissioners, and the county council. Who does what and which decisions you can actually influence.</p>
+      </div>
+      <div class="glossary-item">
+        <p class="glossary-term">Lesson 05 — How to Evaluate a Candidate</p>
+        <p class="glossary-def">What to look for beyond party affiliation. How to find voting records, financial disclosures, and public statements. What questions to ask.</p>
+      </div>
+      <div class="glossary-item">
+        <p class="glossary-term">Lesson 06 — How Policy Becomes Your Grocery Bill</p>
+        <p class="glossary-def">The chain from federal and state decisions to your daily costs. Why local government matters more than national news would have you believe.</p>
+      </div>
+      <div class="glossary-item">
+        <p class="glossary-term">Lesson 07 — How to Show Up to a Public Meeting</p>
+        <p class="glossary-def">Where they are, when they happen, how to sign up to speak, and what actually happens when you do.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:1.5rem;">
+      <p>Have a question you want answered in plain language? Email <strong>forystekforuniontownship@gmail.com</strong> with the subject line Township 101. If you are asking, others probably are too.</p>
+    </div>
+  </div>
+
+</div>
+
+
+<footer>
+  <p class="footer-name">FORYSTEK</p>
+  <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.85rem;color:var(--cream);opacity:0.6;margin-top:0.25rem;">Rooted in Wheeler. Fighting for all of us.</p>
+  <p class="footer-disc">
+    Paid for by Forystek For Union Township Trustee Committee<br>
+    Union Township · Porter County · Indiana · 2026 · Democratic Candidate
+  </p>
+</footer>
+
+</body>
+</html>
