@@ -41,9 +41,11 @@
   }
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; font-size: 16px; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 
   body {
+    max-width: 100vw;
+    overflow-x: hidden;
     background: var(--cream);
     color: var(--navy);
     font-family: 'Barlow', sans-serif;
@@ -208,11 +210,12 @@
   .hero-name {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-size: clamp(2.6rem, 13vw, 7rem);
     line-height: 0.9;
     color: var(--navy);
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     margin-bottom: 1.25rem;
+    word-break: keep-all;
   }
 
   .hero-star-row {
@@ -541,7 +544,7 @@
 
   .involve-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
     margin-top: 2rem;
   }
@@ -583,6 +586,22 @@
     color: #566070;
     line-height: 1.65;
   }
+
+  .involve-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--orange);
+    padding-bottom: 2px;
+  }
+
+  .involve-link:hover { color: var(--green); border-color: var(--green); }
 
   /* Focus styles for keyboard navigation — WCAG 2.1 AA */
   a:focus-visible,
@@ -787,6 +806,16 @@
     .about-stats { grid-template-columns: 1fr 1fr; }
     .hero-top-rule { margin-bottom: 1.75rem; }
     .hero-bottom-rule { margin-top: 1.75rem; }
+    .hero-for { letter-spacing: 0.18em; font-size: 0.72rem; }
+    .hero-badge { letter-spacing: 0.1em; font-size: 0.58rem; padding: 0.35rem 0.7rem; }
+    section { padding: 3.5rem 1.25rem; }
+    #hero { padding: 80px 1.25rem 3.5rem; }
+    .anedot-embed { height: 640px; }
+  }
+
+  @media (max-width: 380px) {
+    .hero-name { font-size: 2.3rem; letter-spacing: 0.01em; }
+    .hero-eyebrow { font-size: 1.6rem; letter-spacing: 0.05em; }
   }
 
   @media (max-width: 480px) {
@@ -804,9 +833,105 @@
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
   }
+
+  /* COUNTDOWN POPUP */
+  .countdown-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(13,31,60,0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 300;
+    padding: 1.5rem;
+  }
+
+  .countdown-overlay.visible { display: flex; }
+
+  .countdown-card {
+    background: var(--navy);
+    border: 1px solid rgba(245,240,230,0.12);
+    border-top: 4px solid var(--orange);
+    border-radius: 8px;
+    max-width: 380px;
+    width: 100%;
+    padding: 2rem 1.75rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .countdown-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.9rem;
+    background: none;
+    border: none;
+    color: rgba(245,240,230,0.5);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+
+  .countdown-close:hover { color: var(--cream); }
+
+  .countdown-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .countdown-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--cream);
+    margin-bottom: 0.4rem;
+  }
+
+  .countdown-days-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 1rem;
+  }
+
+  .countdown-date {
+    font-size: 0.9rem;
+    color: rgba(245,240,230,0.8);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .countdown-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
 </style>
 </head>
 <body>
+
+<div class="countdown-overlay" id="countdownOverlay">
+  <div class="countdown-card">
+    <button class="countdown-close" id="countdownClose" aria-label="Close">&times;</button>
+    <p class="countdown-label">Election Day Is Coming</p>
+    <p class="countdown-number" id="countdownNumber">—</p>
+    <p class="countdown-days-label" id="countdownDaysLabel">Days To Go</p>
+    <p class="countdown-date">Tuesday, November 3, 2026<br>Union Township Trustee &middot; Porter County, Indiana</p>
+    <div class="countdown-actions">
+      <a href="#vote" class="btn-donate" id="countdownVoteLink">How to Vote</a>
+      <a href="https://secure.actblue.com/donate/forystek4uniontownship" target="_blank" rel="noopener" class="btn-secondary" style="border-color:rgba(245,240,230,0.4);color:var(--cream);">Donate</a>
+    </div>
+  </div>
+</div>
 
 <a href="#main" class="skip-link">Skip to content</a>
 
@@ -816,6 +941,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#platform">Platform</a></li>
     <li><a href="#trustee">The Office</a></li>
+    <li><a href="#vote">How to Vote</a></li>
     <li><a href="resources.html">Township 101</a></li>
     <li><a href="#involve">Get Involved</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -932,6 +1058,32 @@
   </div>
 </section>
 
+<section id="vote">
+  <div class="section-inner">
+    <p class="section-label reveal">Before Election Day</p>
+    <h2 class="section-title reveal">Make Sure You're<br>Ready to Vote</h2>
+    <div class="section-rule reveal"></div>
+    <p class="reveal" style="font-size:1rem;color:var(--navy);opacity:0.75;max-width:600px;line-height:1.8;margin-bottom:2rem;">This all runs through the state, not this campaign — so it's the same regardless of who you're voting for. Takes about two minutes to check.</p>
+    <div class="platform-grid reveal" style="margin-top:0;">
+      <div class="platform-card" style="border-top-color:var(--green-bright);">
+        <p class="card-title">Register or Check Your Status</p>
+        <p class="card-body">Register to vote, confirm you're already registered, or update your address at <strong>indianavoters.in.gov</strong>. Registration for the November election closes October 5, 2026.</p>
+      </div>
+      <div class="platform-card" style="border-top-color:var(--orange);">
+        <p class="card-title">Find Your Polling Place</p>
+        <p class="card-body">Your polling location can change between elections. Look yours up at <strong>indianavoters.in.gov</strong>, or call 1-866-IN-1-VOTE if you'd rather talk to a person.</p>
+      </div>
+      <div class="platform-card" style="border-top-color:var(--orange);">
+        <p class="card-title">Key Dates</p>
+        <p class="card-body">Registration closes <strong>October 5</strong>. Early voting begins <strong>October 6</strong>. Election Day is <strong>Tuesday, November 3, 2026</strong>.</p>
+      </div>
+    </div>
+    <div style="margin-top:2rem;">
+      <a href="https://indianavoters.in.gov" target="_blank" rel="noopener" class="btn-primary">Check Registration &amp; Find Your Polling Place</a>
+    </div>
+  </div>
+</section>
+
 <section id="involve">
   <div class="section-inner">
     <p class="section-label reveal">Get Involved</p>
@@ -953,6 +1105,12 @@
         <div class="involve-num">03</div>
         <p class="involve-title">Get in Touch</p>
         <p class="involve-body">Want to volunteer, share your expertise, or just talk about what this community needs? Reach out. No form, no fifteen fields — just a real email address below.</p>
+      </div>
+      <div class="involve-card reveal">
+        <div class="involve-num">04</div>
+        <p class="involve-title">Request a Yard Sign</p>
+        <p class="involve-body">Want to show your support where your neighbors can see it? Fill out a quick form and I'll get a sign to you.</p>
+        <a href="https://forms.gle/7zSBgjDRZ6uv6iBr8" target="_blank" rel="noopener" class="involve-link">Request a Sign</a>
       </div>
     </div>
   </div>
@@ -1022,6 +1180,49 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+  // Election countdown popup
+  (function() {
+    var electionDate = new Date('2026-11-03T00:00:00-05:00');
+    var today = new Date();
+    var msPerDay = 1000 * 60 * 60 * 24;
+    var daysLeft = Math.ceil((electionDate - today) / msPerDay);
+
+    var numberEl = document.getElementById('countdownNumber');
+    var labelEl = document.getElementById('countdownDaysLabel');
+    var overlay = document.getElementById('countdownOverlay');
+    var closeBtn = document.getElementById('countdownClose');
+    var voteLink = document.getElementById('countdownVoteLink');
+
+    if (daysLeft > 0) {
+      numberEl.textContent = daysLeft;
+      labelEl.textContent = daysLeft === 1 ? 'Day To Go' : 'Days To Go';
+    } else if (daysLeft === 0) {
+      numberEl.textContent = 'Today';
+      labelEl.textContent = 'Election Day Is Here';
+    } else {
+      numberEl.textContent = 'Thank You';
+      labelEl.textContent = 'Election Day Has Passed';
+    }
+
+    var dismissedAt = localStorage.getItem('countdownDismissedAt');
+    var hoursSinceDismiss = dismissedAt ? (Date.now() - parseInt(dismissedAt, 10)) / (1000 * 60 * 60) : Infinity;
+
+    if (daysLeft >= 0 && hoursSinceDismiss > 24) {
+      setTimeout(function() { overlay.classList.add('visible'); }, 600);
+    }
+
+    function closeCountdown() {
+      overlay.classList.remove('visible');
+      localStorage.setItem('countdownDismissedAt', Date.now().toString());
+    }
+
+    closeBtn.addEventListener('click', closeCountdown);
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeCountdown();
+    });
+    voteLink.addEventListener('click', closeCountdown);
+  })();
 </script>
 </body>
 </html>
