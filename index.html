@@ -581,6 +581,45 @@
     margin-bottom: 0.5rem;
   }
 
+  /* VOTE SECTION */
+  #vote {
+    background: var(--cream);
+    border-top: 1px solid rgba(13,31,60,0.06);
+  }
+
+  .vote-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .vote-card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(13,31,60,0.07), 0 4px 16px rgba(13,31,60,0.04);
+    padding: 1.75rem;
+    border-top: 3px solid var(--navy);
+  }
+
+  .vote-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .vote-card-body {
+    font-size: 0.9rem;
+    color: #566070;
+    line-height: 1.7;
+  }
+
+  .vote-card-body strong { color: var(--navy); }
+
   .involve-body {
     font-size: 0.88rem;
     color: #566070;
@@ -801,6 +840,7 @@
     .nav-toggle { display: flex; }
     .nav-cta { display: none; }
     .platform-grid { grid-template-columns: 1fr; }
+    .vote-grid { grid-template-columns: 1fr; }
     .involve-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
     .about-stats { grid-template-columns: 1fr 1fr; }
@@ -1064,18 +1104,18 @@
     <h2 class="section-title reveal">Make Sure You're<br>Ready to Vote</h2>
     <div class="section-rule reveal"></div>
     <p class="reveal" style="font-size:1rem;color:var(--navy);opacity:0.75;max-width:600px;line-height:1.8;margin-bottom:2rem;">This all runs through the state, not this campaign — so it's the same regardless of who you're voting for. Takes about two minutes to check.</p>
-    <div class="platform-grid reveal" style="margin-top:0;">
-      <div class="platform-card" style="border-top-color:var(--green-bright);">
-        <p class="card-title">Register or Check Your Status</p>
-        <p class="card-body">Register to vote, confirm you're already registered, or update your address at <strong>indianavoters.in.gov</strong>. Registration for the November election closes October 5, 2026.</p>
+    <div class="vote-grid reveal">
+      <div class="vote-card" style="border-top-color:var(--green-bright);">
+        <p class="vote-card-title">Register or Check Your Status</p>
+        <p class="vote-card-body">Register to vote, confirm you're already registered, or update your address at <strong>indianavoters.in.gov</strong>. Registration for the November election closes October 5, 2026.</p>
       </div>
-      <div class="platform-card" style="border-top-color:var(--orange);">
-        <p class="card-title">Find Your Polling Place</p>
-        <p class="card-body">Your polling location can change between elections. Look yours up at <strong>indianavoters.in.gov</strong>, or call 1-866-IN-1-VOTE if you'd rather talk to a person.</p>
+      <div class="vote-card" style="border-top-color:var(--orange);">
+        <p class="vote-card-title">Find Your Polling Place</p>
+        <p class="vote-card-body">Your polling location can change between elections. Look yours up at <strong>indianavoters.in.gov</strong>, or call 1-866-IN-1-VOTE if you'd rather talk to a person.</p>
       </div>
-      <div class="platform-card" style="border-top-color:var(--orange);">
-        <p class="card-title">Key Dates</p>
-        <p class="card-body">Registration closes <strong>October 5</strong>. Early voting begins <strong>October 6</strong>. Election Day is <strong>Tuesday, November 3, 2026</strong>.</p>
+      <div class="vote-card" style="border-top-color:var(--orange);">
+        <p class="vote-card-title">Key Dates</p>
+        <p class="vote-card-body">Registration closes <strong>October 5</strong>. Early voting begins <strong>October 6</strong>. Election Day is <strong>Tuesday, November 3, 2026</strong>.</p>
       </div>
     </div>
     <div style="margin-top:2rem;">
