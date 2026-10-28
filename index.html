@@ -1,18 +1,3 @@
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JXERNT3L4Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JXERNT3L4Y');
-</script><!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KXNW9H52');</script>
-<!-- End Google Tag Manager -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,10 +44,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 
   body {
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXNW9H52"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
     max-width: 100vw;
     overflow-x: hidden;
     background: var(--cream);
@@ -974,6 +955,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     flex-direction: column;
     gap: 0.65rem;
   }
+
+  /* QUIZ POPUP */
+  .quiz-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(13,31,60,0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 310;
+    padding: 1rem;
+  }
+  .quiz-overlay.visible { display: flex; }
+  .quiz-card {
+    background: var(--navy);
+    border: 1px solid rgba(245,240,230,0.12);
+    border-top: 4px solid var(--green-bright);
+    border-radius: 8px;
+    max-width: 760px;
+    width: 100%;
+    max-height: 94vh;
+    padding: 2.5rem 1rem 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .quiz-card iframe {
+    width: 100%;
+    height: 600px;
+    max-height: calc(94vh - 4.5rem);
+    border: 0;
+    border-radius: 4px;
+    background: #fff;
+  }
+  .quiz-card .countdown-close { top: 0.5rem; right: 0.75rem; font-size: 1.6rem; }
+  @media (max-width: 480px) {
+    .quiz-overlay { padding: 0.5rem; }
+    .quiz-card { padding: 2.25rem 0.5rem 0.5rem; max-height: 96vh; }
+    .quiz-card iframe { height: 80vh; max-height: calc(96vh - 3.5rem); }
+  }
 </style>
 </head>
 <body>
@@ -988,7 +1009,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="countdown-actions">
       <a href="#vote" class="btn-donate" id="countdownVoteLink">How to Vote</a>
       <a href="https://secure.actblue.com/donate/forystek4uniontownship" target="_blank" rel="noopener" class="btn-secondary" style="border-color:rgba(245,240,230,0.4);color:var(--cream);">Donate</a>
+      <button type="button" class="btn-secondary" id="openQuizBtn" style="border-color:rgba(116,198,157,0.6);color:var(--green-light);background:none;cursor:pointer;">Take the Township Quiz</button>
     </div>
+  </div>
+</div>
+
+<div class="quiz-overlay" id="quizOverlay" role="dialog" aria-modal="true" aria-label="True or False: Township Trustee Edition">
+  <div class="quiz-card">
+    <button class="countdown-close" id="quizClose" aria-label="Close quiz">&times;</button>
+    <iframe id="quizFrame" data-src="https://claude.site/public/artifacts/2496e3d4-4c50-4e12-ad09-f9083ca57d77/embed" title="True or False — Township Trustee Edition" allow="clipboard-write" allowfullscreen></iframe>
   </div>
 </div>
 
@@ -1125,20 +1154,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="reveal" style="font-size:1rem;color:var(--navy);opacity:0.75;max-width:600px;line-height:1.8;margin-bottom:2rem;">This all runs through the state, not this campaign — so it's the same regardless of who you're voting for. Takes about two minutes to check.</p>
     <div class="vote-grid reveal">
       <div class="vote-card" style="border-top-color:var(--green-bright);">
-        <p class="vote-card-title">Register or Check Your Status</p>
-        <p class="vote-card-body">Register to vote, confirm you're already registered, or update your address at <strong>indianavoters.in.gov</strong>. Registration for the November election closes October 5, 2026.</p>
+        <p class="vote-card-title">Check Your Registration</p>
+        <p class="vote-card-body">The registration deadline for this election was October 5, but it only takes a minute to confirm you're registered and your address is current at <strong>indianavoters.in.gov</strong>.</p>
       </div>
       <div class="vote-card" style="border-top-color:var(--orange);">
         <p class="vote-card-title">Find Your Polling Place</p>
-        <p class="vote-card-body">Your polling location can change between elections. Look yours up at <strong>indianavoters.in.gov</strong>, or call 1-866-IN-1-VOTE if you'd rather talk to a person.</p>
+        <p class="vote-card-body">Your polling location can change between elections. Look yours up at <strong>indianavoters.in.gov</strong>, or call 1-866-IN-1-VOTE if you'd rather talk to a person. Early voting sites are listed there too.</p>
       </div>
       <div class="vote-card" style="border-top-color:var(--orange);">
         <p class="vote-card-title">Key Dates</p>
-        <p class="vote-card-body">Registration closes <strong>October 5</strong>. Early voting begins <strong>October 6</strong>. Election Day is <strong>Tuesday, November 3, 2026</strong>.</p>
+        <p class="vote-card-body">Early voting is open now through noon on <strong>Monday, November 2</strong>. Election Day is <strong>Tuesday, November 3, 2026</strong>, with polls open 6 a.m.&ndash;6 p.m.</p>
       </div>
     </div>
     <div style="margin-top:2rem;">
       <a href="https://indianavoters.in.gov" target="_blank" rel="noopener" class="btn-primary">Check Registration &amp; Find Your Polling Place</a>
+      <button type="button" class="btn-secondary" id="openQuizBtn2" style="margin-left:0.75rem;cursor:pointer;">Take the Township Quiz</button>
     </div>
   </div>
 </section>
@@ -1281,6 +1311,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (e.target === overlay) closeCountdown();
     });
     voteLink.addEventListener('click', closeCountdown);
+
+    // Township quiz popup (opens from the countdown card or the Vote section)
+    var quizOverlay = document.getElementById('quizOverlay');
+    var quizFrame = document.getElementById('quizFrame');
+    var quizClose = document.getElementById('quizClose');
+    var lastFocus = null;
+
+    function openQuiz() {
+      lastFocus = document.activeElement;
+      closeCountdown();
+      if (!quizFrame.getAttribute('src')) quizFrame.setAttribute('src', quizFrame.getAttribute('data-src'));
+      quizOverlay.classList.add('visible');
+      quizClose.focus();
+    }
+    function closeQuiz() {
+      quizOverlay.classList.remove('visible');
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+    document.getElementById('openQuizBtn').addEventListener('click', openQuiz);
+    document.getElementById('openQuizBtn2').addEventListener('click', openQuiz);
+    quizClose.addEventListener('click', closeQuiz);
+    quizOverlay.addEventListener('click', function(e) { if (e.target === quizOverlay) closeQuiz(); });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (quizOverlay.classList.contains('visible')) closeQuiz();
+        else if (overlay.classList.contains('visible')) closeCountdown();
+      }
+    });
   })();
 </script>
 </body>
